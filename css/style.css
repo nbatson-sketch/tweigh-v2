@@ -1,0 +1,29 @@
+/* style.css - Windows-11 styled kiosk */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:"Segoe UI",SegoeUI,Roboto,Arial,sans-serif;background:#f3f4f6;overflow:hidden}
+.top-tabs{display:flex;gap:16px;align-items:center;padding:14px 24px;background:rgba(255,255,255,0.75);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,0.06)}
+.top-tabs a{color:#111;text-decoration:none;font-size:17px;padding:6px 10px;border-radius:6px}
+.top-tabs a:hover{background:rgba(0,0,0,0.04)}
+.top-tabs .sep{color:#cfcfcf;margin:0 8px}
+
+.container{height:calc(100vh - 64px);display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:28px}
+.tile{background:#fff;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;box-shadow:0 6px 20px rgba(0,0,0,0.08);text-decoration:none;color:#111;transition:transform .12s ease,box-shadow .12s ease}
+.tile:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.12)}
+.tile .icon{width:84px;height:84px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:linear-gradient(180deg,rgba(0,92,185,0.08),rgba(0,92,185,0.04))}
+.tile .label{font-size:18px;font-weight:600}
+.footer{height:64px;background:#fff;border-top:1px solid rgba(0,0,0,0.06);display:flex;align-items:center;padding-left:18px}
+.footer img{height:44px}
+.kiosk-btn{position:fixed;right:18px;top:18px;background:#005CB9;color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+.page{padding:36px;height:calc(100vh - 128px);overflow:auto}
+.page h1{font-size:32px;margin-bottom:12px}
+.page .form-row{margin-bottom:12px}
+.page label{display:block;font-weight:600;margin-bottom:6px}
+.page input[type=text], .page textarea, .page select{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;background:#fff}
+.small-note{color:#666;font-size:14px;margin-top:8px}
+@media(max-width:900px){
+  .container{grid-template-columns:repeat(2,1fr);padding:16px}
+}
+@media(max-width:480px){
+  .top-tabs{font-size:15px;padding:10px}
+  .container{grid-template-columns:1fr;gap:16px;padding:12px}
+}
